@@ -15,8 +15,11 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -36,9 +39,10 @@ public class BirdsController implements Initializable {
     private Boolean loaded = false;
   //  String soundFilePath = "C:\\Users\\whenlin\\Documents\\NetBeansProjects\\Birds\\src\\images\\";
   //  String imageFilePath = "C:\\Users\\whenlin\\Documents\\NetBeansProjects\\Birds\\src\\images\\";
-    private String soundFilePath = "/sounds/";
-    private String imageFilePath = "/images/";
+    private final String soundFilePath = "/sounds/";
+    private final String imageFilePath = "/images/";
     
+    private MediaPlayer audio;
     private List<BirdRecord> list = new ArrayList<>();
     private BirdRecord currentBird;
     
@@ -144,13 +148,22 @@ public class BirdsController implements Initializable {
         this.aboutInfo.setText(currentBird.getAbout());
         
         
-      // Image img1 = SwingFXUtils.toFXImage(img, null);
        
-      String str = "/images/" + this.currentBird.getKey().getBirdName() + ".jpg";
-     //InputStream input = BirdsController.class.getResourceAsStream(str);
-             
+     String str = "/images/" + this.currentBird.getKey().getBirdName() + ".jpg";
+     String url = "/sounds/" + this.currentBird.getKey().getBirdName() + ".mp3";
      Image img = new Image(str);
      this.birdImage.setImage(img);
+     URL res = null;
+     
+//        try {
+//            url = new URL(url_);
+//        } catch (MalformedURLException ex) {
+//            ex.printStackTrace();
+//        }
+
+        
+     Media sound = new Media(url);
+     this.audio = new MediaPlayer(sound);
     }
     
     @FXML
@@ -275,6 +288,9 @@ public class BirdsController implements Initializable {
            case "Large":
                s = 3;
                break;
+               
+           default:
+               s = 1;
        }
        
        
@@ -292,12 +308,14 @@ public class BirdsController implements Initializable {
     
     @FXML
     public void play(){
-        
+        if(this.audio.getMedia() != null){
+            this.audio.play();
+        }
     }
     
     @FXML
     public void stop(){
-        
+        this.audio.stop();
     }
     
     @Override

@@ -48,5 +48,7 @@
       <Button layoutX="874.0" layoutY="701.0" mnemonicParsing="false" onAction="#find" text="Find" />
       <ImageView fx:id="birdImage" fitHeight="335.0" fitWidth="531.0" layoutX="83.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="aboutInfo" layoutX="102.0" layoutY="217.0" prefHeight="149.0" prefWidth="838.0" text="About" textAlignment="JUSTIFY" visible="false" wrapText="true" />
+      <Button layoutX="817.0" layoutY="127.0" mnemonicParsing="false" onAction="#play" text="Play" />
+      <Button layoutX="932.0" layoutY="127.0" mnemonicParsing="false" onAction="#stop" text="Stop" />
    </children> 
 </AnchorPane>
