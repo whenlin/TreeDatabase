@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Abdelkader
+ * @author William
  */
 public class OrderedDictionaryTest {
     String[] birds = {"Bluejay", "Cardinal", "Eagle", "Falcon", "Merlin"};
