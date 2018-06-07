@@ -6,7 +6,7 @@
 package birds;
 
 /**
- * @author Abdelkader
+ * @author whenlin
  * This class implements the class of exceptions thrown by the methods of Dictionary.
  */
 @SuppressWarnings("serial")
