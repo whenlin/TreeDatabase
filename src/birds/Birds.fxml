@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="753.0" prefWidth="1125.0" style="-fx-background-image: url(&quot;file:src/Birds/WesternBackground.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="birds.BirdsController">
+   <children> 
+         <MenuBar fx:id="mainMenu" prefHeight="39.0" prefWidth="971.0" BorderPane.alignment="CENTER">
+           <menus>
+             <Menu mnemonicParsing="false" text="File">
+               <items>
+                     <MenuItem mnemonicParsing="false" onAction="#loadDictionary" text="Fill Dictionary" />
+                 <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+               </items>
+             </Menu>
+           </menus>
+         </MenuBar>
+      <Button layoutX="183.0" layoutY="127.0" mnemonicParsing="false" onAction="#first" text="First" />
+      <Button layoutX="334.0" layoutY="127.0" mnemonicParsing="false" onAction="#next" text="Next" />
+      <Button layoutX="495.0" layoutY="127.0" mnemonicParsing="false" onAction="#previous" text="Previous" />
+      <Button layoutX="671.0" layoutY="127.0" mnemonicParsing="false" onAction="#last" text="Last" />
+      <Label fx:id="birdName" layoutX="102.0" layoutY="183.0" text="Bird Name" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
+      <Label layoutX="105.0" layoutY="707.0" prefHeight="27.0" prefWidth="106.0" text="Name of Bird" />
+      <TextField fx:id="birdNameTextField" layoutX="218.0" layoutY="701.0" prefHeight="39.0" prefWidth="203.0" />
+      <Label layoutX="495.0" layoutY="707.0" prefHeight="27.0" prefWidth="68.0" text="Bird Size" />
+      <ChoiceBox fx:id="birdSizePicker" layoutX="597.0" layoutY="701.0" prefHeight="39.0" prefWidth="188.0" value="1">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Small" />
+            <String fx:value="Medium" />
+            <String fx:value="Large" />
+        </FXCollections>
+    </items>
+      </ChoiceBox>
+      <Button layoutX="874.0" layoutY="701.0" mnemonicParsing="false" onAction="#find" text="Find" />
+      <ImageView fx:id="birdImage" fitHeight="335.0" fitWidth="531.0" layoutX="83.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="aboutInfo" layoutX="102.0" layoutY="217.0" prefHeight="149.0" prefWidth="838.0" text="About" textAlignment="JUSTIFY" visible="false" wrapText="true" />
+   </children> 
+</AnchorPane>
